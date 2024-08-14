@@ -1,0 +1,121 @@
+* {
+    box-sizing: border-box;
+  }
+  
+
+body, html {
+    padding: 0;
+    margin: 0;
+}
+
+.general {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+/*Elements Background*/
+
+.leftColum {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.rightColum {
+    width: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgSide {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/*Fim Background*/
+
+/*Elements*/
+
+.divImgCards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+.divCardFront {
+    position: relative;
+}
+
+.cardFront {
+    padding-left: 35%;
+}
+
+.cardLogo {
+    position: absolute;
+    top: 10%; 
+    left: 50%; 
+    transform: translateX(-50%);
+}
+
+.cardBack {
+    padding-top: 11%;
+    padding-left: 120%;
+}
+
+.divForm {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    width: 750px;
+}
+
+.elements {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+
+.elements i {
+    padding-bottom: 15px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    opacity: 0.9;
+}
+
+.elements input {
+    width: 73%;
+    height: 50px;
+    border-radius: 8px;
+    border: 2px solid #dddddd;
+    outline: none;
+    margin-left: 5px;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+}
+
+.button {
+    background-color: #220930;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    width: 70%;
+    margin-left: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/*Fim Elements*/
