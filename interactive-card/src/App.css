@@ -76,7 +76,6 @@ body, html {
     margin-top: 40px;
     display: flex;
     flex-direction: column;
-    width: 750px;
 }
 
 .elements {
@@ -95,16 +94,48 @@ body, html {
 
 .elements input {
     width: 73%;
-    height: 50px;
+    height: 55px;
     border-radius: 8px;
-    border: 2px solid #dddddd;
+    border: 3px solid #dddddd;
     outline: none;
     margin-left: 5px;
+    font-size: 18px;
 }
 
-.inputs {
-    display: flex;
-    flex-direction: column;
+.elementsCodes {
+    padding-top: 10px;
+    padding-bottom: 15px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    opacity: 0.9;
+    padding-left: 16px;
+}
+
+.cvc {
+    padding-left: 5%;
+}
+
+.inpuCodes {
+    padding-left: 1%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+.inpuCodes input {
+    border: 3px solid #dddddd;
+    outline: none;
+    margin-right: 18px;
+    height: 40px;
+    border-radius: 8px;
+}
+
+.inputMonth, .inputYear {
+    width: 13%;
+}
+
+.inputCVC {
+    width: 40%;
 }
 
 .button {
@@ -113,7 +144,9 @@ body, html {
     font-family: 'Roboto', sans-serif;
     font-size: 18px;
     width: 70%;
+    height: 50px;
     margin-left: 20px;
+    border: none;
     border-radius: 10px;
     cursor: pointer;
 }

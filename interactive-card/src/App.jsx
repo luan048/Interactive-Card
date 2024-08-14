@@ -36,8 +36,18 @@ function App() {
               <i>CARD NUMBER</i>
               <input type="text" placeholder='e.g 1234 5678 9123 0000' />
             </div>
+            
+            <div className='elementsCodes'>
+              <i className='expDate'>EXP.DATE (MM/YY)</i>
+              <i className='cvc'>CVC</i>
 
-            {/* FALTA COLOCAR OS ELEMENTOS DE NÚMEROS DOS CARTÕES, ESTAVA COM ESTRUTURA HTML E CSS MAL FEITOS */}
+              <div className='inpuCodes'>
+                <input className='inputMonth' type="text" placeholder='MM'/>
+                <input className='inputYear' type="text" placeholder='YY'/>
+                <input className='inputCVC' type="text" placeholder='e.g.123'/>
+              </div>
+
+            </div>
 
             <button className='button'>Confirm</button>
           </div>
