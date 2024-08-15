@@ -158,7 +158,7 @@ body, html {
 
 /*Error Menssage*/
 
-.menssageError1 {
+.messageError1 {
     font-family: 'Roboto', sans-serif;
     padding-left: 3px;
     color: red;
@@ -167,7 +167,7 @@ body, html {
     margin-top: 100px;
 }
 
-.menssageError2 {
+.messageError2 {
     font-family: 'Roboto', sans-serif;
     padding-left: 3px;
     color: red;
@@ -176,7 +176,7 @@ body, html {
     margin-top: 98px;
 }
 
-.menssageError3 {
+.messageError3 {
     font-family: 'Roboto', sans-serif;
     padding-left: 18px;
     color: red;
