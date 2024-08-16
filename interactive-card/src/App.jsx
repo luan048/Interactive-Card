@@ -2,7 +2,9 @@ import { useEffect, useState } from 'react'
 import imgSideLeft from '../public/images/bg-main-desktop.png'
 import imgCardFront from '../public/images/bg-card-front.png'
 import imgCardBack from '../public/images/bg-card-back.png'
+
 import cardLogo from '../public/images/card-logo.svg'
+import cardCompleted from '../public/images/icon-complete.svg'
 
 import './App.css'
 
@@ -157,8 +159,10 @@ function App() {
 
       if(valueInputName !== '' && valueInputNumber !== '' && valueInputMonth !== '' && valueInputYear !== '' && valueInputCVC !== '') {
         const divForm = document.getElementById('divForm')
+        const thanksPage = document.getElementById('thanksPage')
 
         divForm.style.display = 'none'
+        thanksPage.style.display = 'flex'
       }
     })
 
@@ -232,7 +236,15 @@ function App() {
           </div>
           {/* END DIV form*/}
           
-          <div className='thanksPage'></div>
+          <div id='thanksPage' className='thanksPage'>
+            <div className='elements'>
+              <div className='divCardCompleted'>
+                <img className='cardComplete' src={cardCompleted}/>
+              </div>
+              <p className='pCardComplete'>We've added your card details</p>
+              <button className='button2'>Continue</button>
+            </div>
+          </div>
 
         </div>
       </div>
