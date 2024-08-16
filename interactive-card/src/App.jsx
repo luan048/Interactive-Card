@@ -7,7 +7,12 @@ import cardLogo from '../public/images/card-logo.svg'
 import './App.css'
 
 function App() {
-  
+  const [cardName, setCardName] = useState('')
+  const [cardNumber, setCardNumber] = useState('')
+  const [inputMonth, setInputMonth] = useState('')
+  const [inputYear, setInputYear] = useState('')
+  const [inputCVC, setInputCVC] = useState('')
+
   useEffect(() => {
     function messageFault1() {
       const blockCardholderName = document.getElementById('CardHolderName')
@@ -100,12 +105,11 @@ function App() {
     }
 
     document.getElementById('button').addEventListener('click', function (event) {
-      event.preventDefault()
 
       const boxCardholder = document.getElementById('CardHolderName')
       const messageError1 = document.getElementById('messageError1')
 
-      const boxCardName = document.getElementById('CardNumber')
+      const boxCardNumber = document.getElementById('CardNumber')
       const messageError2 = document.getElementById('messageError2')
 
       const inputMonth = document.getElementById('inputMonth')
@@ -113,29 +117,48 @@ function App() {
       const inputCVC = document.getElementById('inputCVC')
       const messageError3 = document.getElementById('messageError3')
 
-      if (boxCardholder.value.trim() === '') {
+      //Variable to inputs
+      const valueInputName = boxCardholder.value.trim()
+      const valueInputNumber = boxCardNumber.value.trim()
+      const valueInputMonth = inputMonth.value.trim()
+      const valueInputYear = inputYear.value.trim()
+      const valueInputCVC = inputCVC.value.trim()
+      //End variables to inputs
+
+      if (valueInputName === '') {
         boxCardholder.style.border = '2px solid red'
         messageError1.style.display = 'block'
+        event.preventDefault()
       }
 
-      if (boxCardName.value.trim() === '') {
-        boxCardName.style.border = '2px solid red'
+      if (valueInputNumber === '') {
+        boxCardNumber.style.border = '2px solid red'
         messageError2.style.display = 'block'
+        event.preventDefault()
       }
 
-      if (inputMonth.value.trim() === '') {
+      if (valueInputMonth === '') {
         inputMonth.style.border = '2px solid red'
         messageError3.style.visibility = 'visible'
+        event.preventDefault()
       }
 
-      if (inputYear.value.trim() === '') {
+      if (valueInputYear === '') {
         inputYear.style.border = '2px solid red'
         messageError3.style.visibility = 'visible'
+        event.preventDefault()
       }
 
-      if (inputCVC.value.trim() === '') {
+      if (valueInputCVC === '') {
         inputCVC.style.border = '2px solid red'
         messageError3.style.visibility = 'visible'
+        event.preventDefault()
+      }
+
+      if(valueInputName !== '' && valueInputNumber !== '' && valueInputMonth !== '' && valueInputYear !== '' && valueInputCVC !== '') {
+        const divForm = document.getElementById('divForm')
+
+        divForm.style.display = 'none'
       }
     })
 
@@ -144,6 +167,19 @@ function App() {
     messageFault3()
 
   }, [])
+
+
+
+
+  function formatedCardNumber(event) {
+    let value = event.target.value
+
+    value = value.replace(/\D/g, '')
+
+    value = value.replace(/(\d{4})(?=\d)/g, '$1 ')
+
+    setCardNumber(value)
+  }
 
   return (
     <>
@@ -154,44 +190,50 @@ function App() {
             <div className="divCardFront">
               <img src={imgCardFront} className="cardFront" />
               <img src={cardLogo} className="cardLogo" />
-              <i className='printedCardNumber'>0000 0000 0000 0000</i>
-              <i className='printedName'>Jane Apllesed</i>
-              <i className='printedDate'>00/00</i>
+              <i className='printedCardNumber'>{cardNumber.padEnd(16, '0').replace(/(\d{4})(?=\d)/g, '$1 ')}</i>
+              <i className='printedName'>{cardName || 'Jane Apllesed'}</i>
+              <i className='printedDate'>{inputMonth || '00'}/{inputYear || '00'}</i>
             </div>
             <div className='divCardBack'>
               <img src={imgCardBack} className="cardBack" />
-              <i className='printedCVC'>123</i>
+              <i className='printedCVC'>{inputCVC.padEnd(3, '123')}</i>
             </div>
           </div>
         </div>
 
         <div className="rightColum">
-          <div className="divForm">
+
+          {/* DIV to the form */}
+          <div className="divForm" id='divForm'>
             <div className="elements">
               <i>CARDHOLDER NAME</i>
-              <input type="text" placeholder="e.g. Jane Appleseed" id="CardHolderName" />
+              <input type="text" placeholder="e.g. Jane Appleseed" id="CardHolderName" value={cardName} onChange={(e) => setCardName(e.target.value)} />
               <span id="messageError1" className="messageError1">Can't be blank</span>
             </div>
 
             <div className="elements">
               <i>CARD NUMBER</i>
-              <input type="text" placeholder="e.g 1234 5678 9123 0000" id="CardNumber" />
-              <span id="messageError2" className="messageError2">Wrong format, numbers only</span>
+              <input type="text" placeholder="e.g 1234 5678 9123 0000" id="CardNumber" onChange={formatedCardNumber} value={cardNumber} maxLength={19} />
+              <span id="messageError2" className="messageError2">Can't be blank</span>
             </div>
 
             <div className="elementsCodes">
               <i className="expDate">EXP.DATE (MM/YY)</i>
               <i className="cvc">CVC</i>
               <div className="inpuCodes">
-                <input id="inputMonth" className="inputMonth" type="text" placeholder="MM" />
-                <input id="inputYear" className="inputYear" type="text" placeholder="YY" />
-                <input id="inputCVC" className="inputCVC" type="text" placeholder="e.g.123" />
+                <input id="inputMonth" className="inputMonth" type="text" placeholder="MM" value={inputMonth} onChange={(e) => setInputMonth(e.target.value)} maxLength={2}/>
+                <input id="inputYear" className="inputYear" type="text" placeholder="YY" value={inputYear} onChange={(e) => setInputYear(e.target.value)} maxLength={2}/>
+                <input id="inputCVC" className="inputCVC" type="text" placeholder="e.g.123" value={inputCVC} onChange={(e) => setInputCVC(e.target.value)} maxLength={3}/>
               </div>
             </div>
 
             <span id="messageError3" className="messageError3">Can't be blank</span>
             <button id="button" className="button">Confirm</button>
           </div>
+          {/* END DIV form*/}
+          
+          <div className='thanksPage'></div>
+
         </div>
       </div>
     </>
