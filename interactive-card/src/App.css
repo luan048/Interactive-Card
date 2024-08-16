@@ -60,6 +60,8 @@ body, html {
     padding-left: 35%;
 }
 
+/*Elements in Card Front*/
+
 .cardLogo {
     position: absolute;
     top: 10%; 
@@ -67,9 +69,45 @@ body, html {
     transform: translateX(-50%);
 }
 
+.printedCardNumber {
+    font-family: 'Roboto', sans-serif;
+    color: #fbffff;
+    position: absolute;
+    top: 50%;
+    left: 44%;
+    font-size: 35px;
+    white-space: nowrap;
+}
+
+.printedName {
+    font-family: 'Roboto', sans-serif;
+    color: #fbffff;
+    position: absolute;
+    top: 78%;
+    left: 44%;
+}
+
+.printedDate {
+    font-family: 'Roboto', sans-serif;
+    color: #fbffff;
+    position: absolute;
+    top: 78%;
+    left: 115%;
+}
+
+.printedCVC {
+    font-family: 'Roboto', sans-serif;
+    color: #fbffff;
+    position: absolute;
+    top: 64%;
+    left: 128%;
+}
+
+/*End Elements in Card Front*/
+
 .cardBack {
     padding-top: 11%;
-    padding-left: 120%;
+    padding-left: 50%;
 }
 
 .divForm {
