@@ -94,13 +94,18 @@ body, html {
     top: 78%;
     left: 115%;
 }
+/*End elements card front*/
+
+.divCardBack {
+    position: relative;
+}
 
 .printedCVC {
     font-family: 'Roboto', sans-serif;
-    color: #fbffff;
+    color: white;
     position: absolute;
-    top: 64%;
-    left: 128%;
+    top: 161px;
+    left: 577px;
 }
 
 .cardName {
@@ -109,15 +114,17 @@ body, html {
     position: absolute;
 }
 
-/*End Elements in Card Front*/
-
 .cardBack {
     padding-top: 11%;
     padding-left: 50%;
 }
 
+/*End Elements in Card Front*/
+
+/*Right colum*/
 .divForm {
     margin-top: 40px;
+    margin-left: 250px;
     display: flex;
     flex-direction: column;
 }
@@ -157,10 +164,6 @@ body, html {
     padding-left: 16px;
 }
 
-.cvc {
-    padding-left: 5%;
-}
-
 .inpuCodes {
     padding-left: 1%;
     padding-top: 3%;
@@ -198,6 +201,11 @@ body, html {
     border-radius: 10px;
     cursor: pointer;
 }
+
+.cvc {
+    padding-left: 5%;
+}
+/*End right colum*/
 
 /*Thanks Div*/
 
