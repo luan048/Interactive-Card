@@ -210,7 +210,7 @@ body, html {
 /*Thanks Div*/
 
 .thanksPage {
-    display: none;
+    display: block;
     position: relative;
     margin-top: 40px;
     flex-direction: column;
@@ -254,7 +254,7 @@ body, html {
     font-family: 'Roboto', sans-serif;
     padding-left: 3px;
     color: red;
-    display: none;
+    display: block;
     position: absolute;
     margin-top: 100px;
 }
@@ -263,7 +263,7 @@ body, html {
     font-family: 'Roboto', sans-serif;
     padding-left: 3px;
     color: red;
-    display: none;
+    display: block;
     position: absolute;
     margin-top: 98px;
 }
@@ -274,7 +274,7 @@ body, html {
     color: red;
     margin-top: -10px;
     padding-bottom: 23px;
-    visibility: hidden;
+    visibility: visible;
 }
 
 /*Fim Erros Menssage*/
