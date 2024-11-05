@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import imgSideLeft from '../public/images/bg-main-desktop.png';
 import imgCardFront from '../public/images/bg-card-front.png';
 import imgCardBack from '../public/images/bg-card-back.png';
@@ -33,6 +33,7 @@ function App() {
       inputCVC: inputCVC.trim() === '' ? "Can't be blank" : '',
     }
 
+    // Atualiza o estado de setErrors com o valor que está com error
     setErrors(newErrors);
     return !Object.values(newErrors).some((error) => error !== '');
   }
@@ -43,6 +44,8 @@ function App() {
       setShowThanks(true)
     }
   }
+
+// Funções para manipular o num no card
 
   const formatedCardNumber = (event) => {
     let value = event.target.value
@@ -86,8 +89,11 @@ function App() {
     }
   }
 
+// Fim das funções para manipular num do card
+
   return (
     <>
+      {/* Coluna a esquerda */}
       <div className="general">
         <div className="leftColum">
           <img src={imgSideLeft} className="imgSide" alt="Side background" />
@@ -110,6 +116,7 @@ function App() {
 
         <div className="rightColum">
           {!showThanks ? (
+            // Página com Formulário
             <div className="divForm" id="divForm">
               <div className="elements">
                 <i>CARDHOLDER NAME</i>
@@ -191,6 +198,7 @@ function App() {
               </button>
             </div>
           ) : (
+            // Página de Agradecimento
             <div id="thanksPage" className="thanksPage">
               <div className="elements">
                 <div className="divCardCompleted">
